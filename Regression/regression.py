@@ -7,7 +7,7 @@ from numpy import sqrt
 train = pd.read_csv("train.csv")
 test = pd.read_csv("test.csv")
 
-# print(train.columns)
+print(train.columns)
 
 model = LinearRegression()
 
@@ -22,16 +22,16 @@ Y_test = test.loc[:, "SalePrice"]
 prediction = model.predict(X_test)
 comparison = pd.DataFrame({"Actual Value":Y_test, "Prediction": prediction})
 
-# print(comparison.head())
-# print(comparison.tail())
+print(comparison.head())
+print(comparison.tail())
 
 rmse = sqrt(mean_squared_error(Y_test, prediction))
 
-# print(rmse)
+print(rmse)
 
 correlations = train.corr()
 
-# print(correlations)
+print(correlations)
 
 salePrice_correlations = correlations["SalePrice"]
 
